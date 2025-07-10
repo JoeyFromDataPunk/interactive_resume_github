@@ -152,47 +152,54 @@ st.markdown("""
 • Tableau, SQL, Advanced Excel
 """)
 
-# --- Skills ---
+# --- Create two columns for skills ---
 
 st.write("")
 
 st.divider()
 st.subheader("Skills")
-st.markdown("""
-            ###### Software Skills
-""")
 
 st.write("")  # adds a vertical space
 
-st.markdown("""
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("""
+            ###### Software Skills
+""")
+    st.write("")
+    st.markdown("""
 SQL (SSMS, Postgres, MySQL, Teradata, Trino), Tableau, Power BI, Geographic Information Systems (GIS: QGIS, AEGIS, ArcGIS),
 SAP BusinessObjects, Microsoft Office Suite, Google Suite, Mac and Windows platforms, Python (pandas, NumPy, matplotlib,
-geopandas, seaboard, SciKit-learn, streamlit)
+geopandas, seaborn, scikit-learn, streamlit)
             
 Advanced Excel skills (INDEX/MATCH, lookups, arrays, macros, scripting, pivot tables) and cloud-based spreadsheet tools such as
 Smartsheet, Google Sheets, Numbers, Quip
             
 """)
 
-st.write("")
-st.markdown("""
+with col2:
+    st.markdown("""
             ###### General Skills
 """)
-
-st.write("")  # adds a vertical space
-
-st.markdown("""
+    st.write("")
+    st.markdown("""
             
-• Business Requirements Gathering
-            
-• Cross-Functional/Stakeholder Collaboration
-            
+• Business Requirements Gathering          
+• Cross-Functional/Stakeholder Collaboration            
 • Public Speaking/Presentation
-            
-• Shipping/Logistics/Supply Chain
-            
-• Product Roadmaps/Process Improvement
-            
+• Shipping/Logistics/Supply Chain           
+• Product Roadmaps/Process Improvement          
 • KPI Reporting
             
 """)
+st.write("")
+st.write("")
+
+# --- Download Resume Button ---
+with open("Joseph_Boyle_Resume.pdf", "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
+
+st.download_button(label="📄 Download PDF Resume",
+                   data=PDFbyte,
+                   file_name="Joseph_Boyle_Resume.pdf",
+                   mime='application/pdf')
