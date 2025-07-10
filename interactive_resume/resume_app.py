@@ -196,10 +196,21 @@ st.write("")
 st.write("")
 
 # --- Download Resume Button ---
-with open("Joseph_Boyle_Resume.pdf", "rb") as pdf_file:
+# this allows the code to pull the local file if I am testing the code
+# once the code is deployed it can't access the local file
+# so this tries to find the local file, and if not available pulls it from GitHub
+import os
+
+pdf_path = "interactive_resume/Joseph_Boyle_Resume.pdf"
+if not os.path.exists(pdf_path):
+    pdf_path = "Joseph_Boyle_Resume.pdf"  # fallback for local testing
+
+with open(pdf_path, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 
-st.download_button(label="📄 Download PDF Resume",
-                   data=PDFbyte,
-                   file_name="Joseph_Boyle_Resume.pdf",
-                   mime='application/pdf')
+st.download_button(
+    label="📄 Download PDF Resume",
+    data=PDFbyte,
+    file_name="Joseph_Boyle_Resume.pdf",
+    mime="application/pdf"
+)
