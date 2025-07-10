@@ -24,6 +24,14 @@ Hi! I'm Joseph, a data science professional with expertise in Python, SQL, GIS, 
 I am currently pursuing a B.S. in Data Science at the University of Maryland. I have over 13 years of experience in analytics, visualization, and operations working for Fortune 50 companies.
 """)
 
+# Link to source code
+st.markdown("""
+This interactive resume was built using **Python** and [Streamlit](https://streamlit.io/).
+
+[View the source code on GitHub](https://github.com/JoeyFromDataPunk/interactive_resume_github/blob/main/interactive_resume/resume_app.py)
+""")
+
+# --- Work experience ---
 st.divider()
 st.subheader("Work Experience")
 st.markdown("""
@@ -109,6 +117,7 @@ recommending process improvements.
 
 """)
 
+# --- Educational Experience ---
 st.write("")
 st.divider()
 st.subheader("Education")
@@ -117,7 +126,7 @@ st.markdown("""
 ###### Adelphi, MD | 2024-Present
 """)
 
-st.write("")  # adds a vertical space
+st.write("")  
 
 st.markdown("""
 • Bachelor's in Data Science - Expected 2026
@@ -135,13 +144,16 @@ st.markdown("""
 ###### Austin, TX | 2021
 """)
 
-st.write("")  # adds a vertical space
+st.write("")  
 
 st.markdown("""
 • Certification in Data Analytics
 
 • Tableau, SQL, Advanced Excel
 """)
+
+# --- Skills ---
+
 st.write("")
 
 st.divider()
@@ -184,5 +196,3 @@ st.markdown("""
 • KPI Reporting
             
 """)
-
-# streamlit run resume_app.py
