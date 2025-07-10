@@ -6,7 +6,7 @@ col1, col2 = st.columns([1, 4])  # Adjust ratio as needed
 # Left column: Image
 with col1:
     st.write("")
-    # st.image("jb_headshot.jpg", width=150)
+    st.image("jb_headshot.jpg", width=150)
 
 # Title and subtitle
 with col2:
